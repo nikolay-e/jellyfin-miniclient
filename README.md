@@ -1,5 +1,12 @@
 # Jellyfin Mini Music Client - Design Document
 
+## API Reference
+
+The complete Jellyfin REST API specification (OpenAPI 3.0) is available in:
+- **[jellyfin-api-spec.json](./jellyfin-api-spec.json)** - Full OpenAPI specification (v10.10.7, 59,343 lines)
+
+This spec can be loaded into Swagger UI, Postman, or used to generate client SDKs.
+
 ## Central Technical Thesis
 
 A portable music client for Jellyfin must solve three specific problems: (1) Jellyfin's REST API has undocumented authentication and parameter behaviors requiring precise implementation, (2) cross-platform audio playback requires abstracting platform I/O behind interfaces while keeping core logic portable, and (3) "mini" means enforcing measurable bundle size and runtime constraints. Architecture decisions flow directly from these constraints, not framework preferences.
