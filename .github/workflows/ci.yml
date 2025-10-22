@@ -1,10 +1,8 @@
 name: CI
 
 on:
-  push:
-    branches: [ main, develop ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ main ]
 
 jobs:
   pre-commit:
@@ -112,3 +110,13 @@ jobs:
       - name: Clean up test containers
         if: always()
         run: docker-compose -f docker-compose.test.yml down -v
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  claude:
+    name: Claude
+    runs-on: ubuntu-latest
+    steps:
+      - name: Claude Code Action Official
+        uses: anthropics/claude-code-action@v1
