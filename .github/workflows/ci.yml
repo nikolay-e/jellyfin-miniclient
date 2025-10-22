@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  claude:
+    name: Claude
+    runs-on: ubuntu-latest
+    steps:
+      - name: Claude Code Action Official
+        uses: anthropics/claude-code-action@v1
